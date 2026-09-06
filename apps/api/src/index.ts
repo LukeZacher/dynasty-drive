@@ -1,8 +1,9 @@
 import Fastify from "fastify";
+import cors from "@fastify/cors";
 
-// Create instance
 const isDevelopment = process.env.NODE_ENV !== "production";
 
+// Create instance
 const app = Fastify({
   logger: isDevelopment
     ? {
@@ -17,12 +18,15 @@ const app = Fastify({
     : true,
 });
 
-// Register
+await app.register(cors, {
+  origin: isDevelopment ? "http://localhost:5173" : "https://dynastydrive.fun",
+  credentials: true,
+});
+
 app.get("/health", async () => {
   return { status: "ok" };
 });
 
-// Start listening
 const port = Number(process.env.PORT) || 3000;
 
 const start = async () => {
@@ -34,4 +38,5 @@ const start = async () => {
   }
 };
 
+// Start listening
 start();
