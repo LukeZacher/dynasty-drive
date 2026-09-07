@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: dynasty-drive-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: dynasty
+      POSTGRES_PASSWORD: localdev
+      POSTGRES_DB: dynasty_drive
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dynasty -d dynasty_drive"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres-data:
