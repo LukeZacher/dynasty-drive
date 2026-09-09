@@ -1,25 +1,8 @@
 import { pgEnum, integer, pgTable, uuid, varchar } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
+import { POSITIONS } from "@dynasty-drive/shared";
 
-export const positionEnum = pgEnum("position", [
-  "QB",
-  "RB",
-  "FB",
-  "WR",
-  "TE",
-  "OT",
-  "OG",
-  "C",
-  "DE",
-  "DT",
-  "MLB",
-  "OLB",
-  "CB",
-  "FS",
-  "SS",
-  "K",
-  "P",
-]);
+export const positionEnum = pgEnum("position", POSITIONS);
 
 export const players = pgTable("players", {
   id: uuid("id")
