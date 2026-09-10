@@ -17,6 +17,9 @@ importers:
       '@dynasty-drive/shared':
         specifier: workspace:*
         version: link:../../packages/shared
+      '@dynasty-drive/sim':
+        specifier: workspace:*
+        version: link:../../packages/sim
       '@fastify/cors':
         specifier: ^11.3.0
         version: 11.3.0
@@ -106,6 +109,9 @@ importers:
       '@types/node':
         specifier: ^26.5.0
         version: 26.5.0
+      tsx:
+        specifier: ^4.23.13
+        version: 4.23.13
 
 packages:
 

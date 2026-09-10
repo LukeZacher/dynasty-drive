@@ -24,3 +24,7 @@ Thumbs.db
 
 # Test coverage
 coverage/
+
+# Scratch files
+**/scratch.ts
+**/scratch.*.ts
