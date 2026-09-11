@@ -1,6 +1,7 @@
-import { clamp, randomChoice, randomInt, randomNormal, type Rng } from "../random.js";
-import { FIRST_NAMES, LAST_NAMES } from "../data/names.js";
 import { POSITIONS, type Position } from "@dynasty-drive/shared";
+
+import { FIRST_NAMES, LAST_NAMES } from "../data/names.js";
+import { clamp, randomChoice, randomInt, randomNormal, type Rng } from "../random.js";
 
 export type GeneratedPlayer = {
   firstName: string;

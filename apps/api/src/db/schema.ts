@@ -1,5 +1,6 @@
-import { pgEnum, integer, pgTable, uuid, varchar } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
+import { integer, pgEnum, pgTable, uuid, varchar } from "drizzle-orm/pg-core";
+
 import { POSITIONS } from "@dynasty-drive/shared";
 
 export const positionEnum = pgEnum("position", POSITIONS);
