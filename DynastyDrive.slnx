@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DynastyDrive.Api/DynastyDrive.Api.csproj" />
+    <Project Path="src/DynastyDrive.Application/DynastyDrive.Application.csproj" />
+    <Project Path="src/DynastyDrive.Domain/DynastyDrive.Domain.csproj" />
+    <Project Path="src/DynastyDrive.Infrastructure/DynastyDrive.Infrastructure.csproj" />
+  </Folder>
+</Solution>

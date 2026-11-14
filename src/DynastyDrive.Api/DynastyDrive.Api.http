@@ -1,0 +1,6 @@
+@DynastyDrive.Api_HostAddress = http://localhost:5041
+
+GET {{DynastyDrive.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

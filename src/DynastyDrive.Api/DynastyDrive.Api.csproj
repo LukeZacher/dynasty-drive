@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />
+    <!-- Pinned to patch GHSA-v5pm-xwqc-g5wc (transitive via Microsoft.AspNetCore.OpenApi).
+     Remove once Microsoft.AspNetCore.OpenApi depends on >= 2.7.5. -->
+    <PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DynastyDrive.Infrastructure\DynastyDrive.Infrastructure.csproj" />
+    <ProjectReference Include="..\DynastyDrive.Application\DynastyDrive.Application.csproj" />
+  </ItemGroup>
+
+</Project>
