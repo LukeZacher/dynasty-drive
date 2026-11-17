@@ -1,7 +1,10 @@
+using DynastyDrive.Domain.Teams;
+
 namespace DynastyDrive.Domain.Players;
 
 public class Player
 {
+    public int Id { get; private set; }
     public string FirstName { get; private set; }
     public string LastName { get; private set; }
     public DateOnly DateOfBirth { get; private set; }
@@ -25,6 +28,21 @@ public class Player
         DateOfBirth = dateOfBirth;
         Position = position;
         Status = PlayerStatus.Prospect;
+    }
+
+    public void JoinTeam(Contract contract)
+    {
+        if (Status is not (PlayerStatus.FreeAgent or PlayerStatus.Prospect))
+            throw new InvalidOperationException($"Player with {Status} status cannot join a team.");
+
+        if (contract.PlayerId != Id)
+            throw new ArgumentException(
+                "Failed to join team: contract does not belong to player.",
+                nameof(contract)
+            );
+
+        TeamId = contract.TeamId;
+        Status = PlayerStatus.Active;
     }
 
     public void Release()
